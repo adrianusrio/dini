@@ -8,6 +8,7 @@ import {
     NavItem,
     NavLink
   } from 'reactstrap';
+import {NavLink as RRNavLink } from "react-router-dom";
 
 export const Menu = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -16,9 +17,9 @@ export const Menu = () => {
 
     return (
         <Navbar dark expand="md" className="px-5" style = {{ backgroundColor: '#349896', borderColor: '#349896' }}>
-            <NavbarBrand href="/">
+            <NavbarBrand to="/" tag={RRNavLink}>
                 <img
-                    src={require('../images/logo-dini.png')}
+                    src={require('../../images/logo-dini.png')}
                     width="100px"
                     className="d-inline-block align-top"
                     alt="React Bootstrap logo"
@@ -28,7 +29,7 @@ export const Menu = () => {
             <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto ml-5" navbar>
                 <NavItem>
-                    <NavLink href="/components/" className="text-white px-3" >
+                    <NavLink to="/golden-age" className="text-white px-3" tag={RRNavLink}>
                         <b>Golden Age</b>
                     </NavLink>
                 </NavItem>

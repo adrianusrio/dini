@@ -9,14 +9,42 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-.banner-header {
-    background-image: url(https://dini.id/images/banner/banner-homepage-new.jpg);
+.banner-home {
+    background-image: url(./images/banner-homepage-new.jpg);
     height: 350px;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
 }
 
-.assesment input{
-  border-radius: 15px;
+.banner-golden-age {
+    background-image: url(./images/banner-golden-age.jpg);
+    height: 350px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.assesment input {
+    border-radius: 15px;
+}
+
+.banner-team {
+    background-image: url('./images/tim.jpg');
+    max-height: 450px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.banner-team ul {
+    line-height: 20px;
+}
+
+.banner-team li {
+    list-style-type: none
+}
+
+.profile-team li {
+    font-size: 13px;
 }
