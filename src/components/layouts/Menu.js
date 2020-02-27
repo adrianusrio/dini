@@ -16,7 +16,7 @@ export const Menu = () => {
     const toggle = () => setIsOpen(!isOpen);
 
     return (
-        <Navbar dark expand="md" className="px-5" style = {{ backgroundColor: '#349896', borderColor: '#349896' }}>
+        <Navbar dark expand="md" className="px-5 fixed-top" style = {{ backgroundColor: '#349896', borderColor: '#349896' }}>
             <NavbarBrand to="/" tag={RRNavLink}>
                 <img
                     src={require('../../images/logo-dini.png')}
@@ -34,25 +34,20 @@ export const Menu = () => {
                     </NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink href="/components/" className="text-white px-3" >
+                    <NavLink to="/speech-delay" className="text-white px-3" tag={RRNavLink}>  
                         <b>Speech Delay</b>
                     </NavLink>
                 </NavItem>
             </Nav>
             <Nav className="ml-5" navbar>
                 <NavItem>
-                    <NavLink href="/components/" className="text-white px-3 d-none d-sm-none d-md-block d-lg-block" >
+                    <NavLink href="#" className="text-white px-3 d-none d-sm-none d-md-block d-lg-block" >
                         <i className="fa fa-phone fa-lg mr-2" aria-hidden="true"></i> 0813-8658-3800
                     </NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink href="/components/" className="text-white d-none d-sm-none d-md-block d-lg-block" >
+                    <NavLink href="#" className="text-white d-none d-sm-none d-md-block d-lg-block" >
                         <i className="fa fa-instagram fa-lg mr-2" aria-hidden="true"></i>
-                    </NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink href="/components/" className="text-white d-none d-sm-none d-md-block d-lg-block" >
-                        <i className="fa fa-youtube-play fa-lg" aria-hidden="true"></i>
                     </NavLink>
                 </NavItem>
             </Nav>

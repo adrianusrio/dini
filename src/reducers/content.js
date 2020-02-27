@@ -10,7 +10,11 @@ const content = (state = '', action) => {
                         bannerClass: "banner-home"
                     },
                     whoWeAre: {
-                        text: "Dini.id adalah startup yang khusus dirancang untuk memberikan program stimulasi dan intervensi dalam tumbuh kembang anak dengan memadukan antara teknologi, ilmu psikologi, orang tua, dan tim ahli. Dini.id menyediakan sistem assessment berkala yang disupervisi oleh psikiater dan psikolog klinis yang dapat mengidentifikasi potensi ataupun keterlambatan dalam perkembangan anak yang unik sejak dini. Kami percaya bahwa bermain adalah aktivitas terpenting bagi anak untuk belajar dan berkembang, oleh karena itu Dini.id bekerjasama dengan playground yang mudah dijangkau dan ramah anak, merancang suatu program khusus permainan anak bersama orang tua yang berfungsi untuk menstimulasi perkembangan anak dengan dibimbing oleh kid's trainer profesional. Dengan demikian orang tua dapat mempelajari pengetahuan yang tepat untuk mengoptimalkan potensi pada anaknya agar menjadi anak-anak yang mandiri dan tangguh di masa depan."
+                        text:[
+                            {
+                                0 : "Dini.id adalah startup yang khusus dirancang untuk memberikan program stimulasi dan intervensi dalam tumbuh kembang anak dengan memadukan antara teknologi, ilmu psikologi, orang tua, dan tim ahli. Dini.id menyediakan sistem assessment berkala yang disupervisi oleh psikiater dan psikolog klinis yang dapat mengidentifikasi potensi ataupun keterlambatan dalam perkembangan anak yang unik sejak dini. Kami percaya bahwa bermain adalah aktivitas terpenting bagi anak untuk belajar dan berkembang, oleh karena itu Dini.id bekerjasama dengan playground yang mudah dijangkau dan ramah anak, merancang suatu program khusus permainan anak bersama orang tua yang berfungsi untuk menstimulasi perkembangan anak dengan dibimbing oleh kid's trainer profesional. Dengan demikian orang tua dapat mempelajari pengetahuan yang tepat untuk mengoptimalkan potensi pada anaknya agar menjadi anak-anak yang mandiri dan tangguh di masa depan."
+                            }
+                        ]
                     },
                     description: {
                         text: `<p>
@@ -34,7 +38,11 @@ const content = (state = '', action) => {
                         bannerClass: "banner-golden-age"
                     },
                     whoWeAre:{
-                        text: "Menjadi keinginan setiap orang tua agar anak-anak mereka dapat tumbuh dan berkembang dengan baik. Dengan menjalani proses tumbuh kembang yang baik, anak dapat memaksimalkan potensi dalam diri anak. Oleh karena itu, perlu adanya peran orang tua memperhatikan anak agar dapat menjalani proses tumbuh kembang yang sesuai. Dalam fase awal kehidupan anak, terdapat fase yang sangat penting dan berperan dalam proses pertumbuhan dan perkembangan, yaitu golden age atau periode usia emas.",
+                        text: [
+                            {
+                                0 : "Menjadi keinginan setiap orang tua agar anak-anak mereka dapat tumbuh dan berkembang dengan baik. Dengan menjalani proses tumbuh kembang yang baik, anak dapat memaksimalkan potensi dalam diri anak. Oleh karena itu, perlu adanya peran orang tua memperhatikan anak agar dapat menjalani proses tumbuh kembang yang sesuai. Dalam fase awal kehidupan anak, terdapat fase yang sangat penting dan berperan dalam proses pertumbuhan dan perkembangan, yaitu golden age atau periode usia emas."
+                            }
+                        ],
                         video: "https://www.youtube.com/embed/JiN5asBfs-4"
                     },
                     description: {
@@ -50,7 +58,44 @@ const content = (state = '', action) => {
                     },
                     name: 'golden-age'
                 }
-            }else{
+            }else if(action.payload === '/speech-delay'){
+                return {
+                    id: 3,
+                    heading: {
+                        h1: "ATASI SPEECH DELAY PADA ANAK SEJAK DINI",
+                        h2: "SOLUSI ASIK DAN MENYENANGKAN DENGAN AKTIVITAS PLAYTIME UNTUK MENGATASI TERLAMBAT BICARA",
+                        bannerClass: "banner-speech-delay"
+                    },
+                    whoWeAre:{
+                        text: [
+                            {
+                                0: "Setiap pertemuan antar orang tua di lingkungan sekitar tak terlepas dari perbincangan mengenai perkembangan dan pertumbuhan anak-anaknya. Kadang-kadang terdengar beberapa pertanyaan yang muncul diantara beberapa orang tua, seperti: “Sudah usia 2 tahun, tapi baru bisa mengucapkan ‘mama’ dan ‘papa’, Itu normalkah?”; “Si kecil belum bisa menyebutkan menyebutkan benda-benda, padahal usianya mau 2 tahun, Kenapa, ya?”."
+                            },
+                            {
+                                1: "Hal tersebut menjadi kekhawatiran bagi orang tua mengenai perkembangan kemampuan bicara anaknya bila dibandingkan dengan anak-anak seusianya. Namun, kekhawatiran tersebut harus dipahami sebagai bentuk perkembangan kesiapan otak anak dan dapat diatasi karena kemampuan otak anak untuk berkembang masih dapat mengejar kemampuan anak-anak lainnya. Keterlambatan kemampuan bicara pada anak-anak sering disebut sebagai speech delay."
+                            }
+                        ],
+                        video: "https://www.youtube.com/embed/JiN5asBfs-4"
+                    },
+                    description: {
+                        text: `<p>Speech delay atau keterlambatan bicara merupakan bentuk keterlambatan dalam perkembangan atau mekanisme seseorang untuk mengeluarkan suara. Speech delay sering terjadi pada masa awal pertumbuhan dan perkembangan anak-anak yang berhubungan dengan kesiapan otak dapat diakibatkan oleh kurangnya interaksi antara anak dan orang tua. Dalam kondisi lebih serius, speech delay dapat menunjukkan adanya gangguan pendengaran hingga gangguan mental pada anak.</p>
+
+                        <p>Speech delay dapat mengganggu pertumbuhan dan perkembangan pada masa anak-anak sehingga mengakibatkan kesulitan untuk berkomunikasi dan mengekspresikan keinginannya kepada orang lain. Hal ini akan menyulitkan orang tua untuk memahami keinginan buah hatinya. Deteksi yang lebih dini dapat membantu perkembangan anak untuk mengejar ketertinggalan dalam hal kemampuan berbicara.</p>
+            
+                        <p>Speech delay dapat berhubungan dengan keterlambatan kemampuan dalam berbahasa dan berbicara pada masa perkembangan dan pertumbuhan anak-anak. Terdapat perbedaan diantara keterlambatan kemampuan berbahasa dan berbicara. Keterlambatan berbahasa berhubungan dengan kemampuan untuk menyatakan isi pikiran atau menyerap informasi dari lingkungan, sedangkan keterlambatan berbicara berhubungan dengan kemampuan untuk mengucapkan, mengeluarkan suara atau melafalkan suatu kata.</p>
+            
+                        <p>Kemampuan setiap anak untuk berbicara berbeda-beda sehingga sulit untuk menyamakan kemampuan seorang anak dengan anak lainnya. Hal ini dikarenakan bentuk kesiapan otak setiap anak berbeda. Namun, terdapat beberapa tanda yang dapat membantu mengukur perkembangan kemampuan berbicara anak. Tanda-tanda tersebut antara lain:</p>
+            
+                        <ul>
+                            <li>Pada usia hingga 1 tahun, anak dapat mengucapkan kata yang menunjukkan kedua orang tuanya seperti kata ‘mama’ dan ‘papa’</li>
+                            <li>Pada usia 1-2 tahun, anak dapat menunjuk ke arah orang tuanya dan merespon ketika namanya dipanggil.</li>
+                            <li>Pada usia 2 tahun, anak dapat menunjuk benda atau mengucapkan 2-3 kata, interaksi dengan bicara dengan bentuk komunikasi sederhana.</li>
+                        </ul>`
+                    },
+                    name: 'speech-delay'
+                }
+            }
+            else{
                 return {
                     id: null,
                     heading: {

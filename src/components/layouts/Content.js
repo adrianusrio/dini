@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../layouts/Header'
-import { Jumbotron, Container, Col, Row } from 'reactstrap';
+import { Jumbotron, Container, Col, Row, Card, CardHeader, CardBody } from 'reactstrap';
 
 const HowWeWork = () => {
 	return(
@@ -67,9 +67,11 @@ const WhoWeAre = (props) => {
 			<Container>
 				<Row>
 					<Col md={8} lg={8}>
-						<p className="text-justify" >
-							{props.whoWheAre.text}
-						</p>
+						{props.whoWheAre.text.map((object,i) => 
+							<p className="text-justify" key={i}>
+								{object[i]}
+							</p>
+						)}
 					</Col>
 					<Col md={4} lg={4}>
 						<iframe width="auto" height="150"src={props.whoWheAre.video} title="video"></iframe>
@@ -80,12 +82,17 @@ const WhoWeAre = (props) => {
 	}else{
 		return(
 			<Container>
-				<p className="text-justify" >
-					{props.whoWheAre.text}
-				</p>
+				{props.whoWheAre.text.map((object,i) => 
+					<p className="text-justify" key={i}>
+						{object[i]}
+					</p>
+				)}
 			</Container>
 		)
 	}
+	// return(
+	// 	<p>asd</p>
+	// )
 	
 	
 }
@@ -155,6 +162,248 @@ const Description = (props) => {
 	)
 }
 
+// const Timeline = () => {
+// 	return(
+// 		<Container fluid style={{ lineHeight:"18px"}}>
+// 			<div className="col-md-12  text-center">
+// 				<h3><b>PROGRAM STIMULASI SAMBIL BERMAIN DAN BELAJAR</b></h3>
+// 				<p>
+// 					Program stimulasi disusun dengan metode khusus yang dirancang oleh para profesional. Bermain dan belajar jadi menyenangkan dengan aktivitas playtime yang dikemas dalam bentuk aktivitas bermain. Terdapat 2 pilihan sesi, pagi (10:00-13:00) dan sesi siang (14:00-17:00).
+// 				</p>
+// 			</div>
+// 			<div className="d-flex position-relative">
+// 				<Card style={{ width: "50%" }} className="mx-4">
+// 					<CardHeader style={{ backgroundColor: "#f16530" }}><h4 className="text-center text-white">Hi Hello Baby Class</h4></CardHeader>
+// 					<CardBody className="pb-0">
+// 						<p className="mb-0">
+// 							<b>Usia 0-12 bulan:</b> Menstimulasi kebutuhan, kemampuan, dan sensitifitas pada bayi <b>|</b> Melatih bagaimana orang tua memiliki interaksi yang baik terhadap bayi, terutama eye contact dan respon <b>|</b> Melatih kemampuan motorik halus dan kasar <b>|</b> Memberikan stimulasi dini melalui pengalaman sensori pada bayi.
+// 						</p>
+// 						<table className="table table-borderless mb-0">
+// 							<tbody>
+// 								<tr>
+// 									<td>
+// 										<img src={require('../../images/foto-kelas/thumb/0-1.jpg')} className="img-fluid" alt="kelas 0_1" />
+// 									</td>
+// 									<td>
+// 										<img src={require('../../images/foto-kelas/thumb/0-2.jpg')} className="img-fluid" alt="kelas 0_2" />
+// 									</td>
+// 									<td>
+// 										<img src={require('../../images/foto-kelas/thumb/0-3.jpg')} className="img-fluid" alt="kelas 0_3" />
+// 									</td>
+// 								</tr>
+// 							</tbody>
+// 						</table>
+// 					</CardBody>
+// 				</Card>
+// 				<div className="circle circle-0">
+// 					<p>0</p>
+// 				</div>
+// 				<div className="link link-0"></div>
+// 				<Card style={{ width: "50%", border:"none" }} className="mx-4">
+// 					<CardBody>
+// 						<h4>HARGA UNTUK 8x PERTEMUAN @3JAM <br/>MULAI DARI Rp. 1.200.000,-/BULAN</h4>
+// 					</CardBody>
+// 				</Card>
+// 			</div>
+// 			<div className="d-flex position-relative" style={{ top: "-150px"}}>
+// 				<div style={{ width: "50%", border:"none" }} className="mx-4">
+
+// 				</div>
+// 				<div className="circle circle-1">
+// 					<p>1</p>
+// 				</div>
+// 				<div className="link link-1"></div>
+// 				<Card style={{ width: "50%" }} className="mx-4">
+// 					<CardHeader style={{ backgroundColor: "#f16530" }}><h4 className="text-center text-white">Hi Hello Baby Class</h4></CardHeader>
+// 					<CardBody className="pb-0">
+// 						<p className="mb-0">
+// 							<b>Usia 0-12 bulan:</b> Menstimulasi kebutuhan, kemampuan, dan sensitifitas pada bayi <b>|</b> Melatih bagaimana orang tua memiliki interaksi yang baik terhadap bayi, terutama eye contact dan respon <b>|</b> Melatih kemampuan motorik halus dan kasar <b>|</b> Memberikan stimulasi dini melalui pengalaman sensori pada bayi.
+// 						</p>
+// 						<table className="table table-borderless mb-0">
+// 							<tbody>
+// 								<tr>
+// 									<td>
+// 										<img src={require('../../images/foto-kelas/thumb/0-1.jpg')} className="img-fluid" alt="kelas 0_1" />
+// 									</td>
+// 									<td>
+// 										<img src={require('../../images/foto-kelas/thumb/0-2.jpg')} className="img-fluid" alt="kelas 0_2" />
+// 									</td>
+// 									<td>
+// 										<img src={require('../../images/foto-kelas/thumb/0-3.jpg')} className="img-fluid" alt="kelas 0_3" />
+// 									</td>
+// 								</tr>
+// 							</tbody>
+// 						</table>
+// 					</CardBody>
+// 				</Card>
+// 			</div>
+// 			<div className="d-flex position-relative" style={{ bottom: "255px"}}>
+// 				<Card style={{ width: "50%" }} className="mx-4">
+// 					<CardHeader style={{ backgroundColor: "#f16530" }}><h4 className="text-center text-white">Hi Hello Baby Class</h4></CardHeader>
+// 					<CardBody className="pb-0">
+// 						<p className="mb-0">
+// 							<b>Usia 0-12 bulan:</b> Menstimulasi kebutuhan, kemampuan, dan sensitifitas pada bayi <b>|</b> Melatih bagaimana orang tua memiliki interaksi yang baik terhadap bayi, terutama eye contact dan respon <b>|</b> Melatih kemampuan motorik halus dan kasar <b>|</b> Memberikan stimulasi dini melalui pengalaman sensori pada bayi.
+// 						</p>
+// 						<table className="table table-borderless mb-0">
+// 							<tbody>
+// 								<tr>
+// 									<td>
+// 										<img src={require('../../images/foto-kelas/thumb/0-1.jpg')} className="img-fluid" alt="kelas 0_1" />
+// 									</td>
+// 									<td>
+// 										<img src={require('../../images/foto-kelas/thumb/0-2.jpg')} className="img-fluid" alt="kelas 0_2" />
+// 									</td>
+// 									<td>
+// 										<img src={require('../../images/foto-kelas/thumb/0-3.jpg')} className="img-fluid" alt="kelas 0_3" />
+// 									</td>
+// 								</tr>
+// 							</tbody>
+// 						</table>
+// 					</CardBody>
+// 				</Card>
+// 				<div className="circle circle-2">
+// 					<p>2</p>
+// 				</div>
+// 				<div className="link link-2"></div>
+// 				<div style={{ width: "50%", border:"none" }} className="mx-4">
+
+// 				</div>
+// 			</div>
+// 			<div className="d-flex position-relative" style={{ bottom: "410px"}}>
+// 				<div style={{ width: "50%", border:"none" }} className="mx-4">
+
+// 				</div>
+// 				<div className="circle circle-3">
+// 					<p>3</p>
+// 				</div>
+// 				<div className="link link-3"></div>
+// 				<Card style={{ width: "50%" }} className="mx-4">
+// 					<CardHeader style={{ backgroundColor: "#f16530" }}><h4 className="text-center text-white">Hi Hello Baby Class</h4></CardHeader>
+// 					<CardBody className="pb-0">
+// 						<p className="mb-0">
+// 							<b>Usia 0-12 bulan:</b> Menstimulasi kebutuhan, kemampuan, dan sensitifitas pada bayi <b>|</b> Melatih bagaimana orang tua memiliki interaksi yang baik terhadap bayi, terutama eye contact dan respon <b>|</b> Melatih kemampuan motorik halus dan kasar <b>|</b> Memberikan stimulasi dini melalui pengalaman sensori pada bayi.
+// 						</p>
+// 						<table className="table table-borderless mb-0">
+// 							<tbody>
+// 								<tr>
+// 									<td>
+// 										<img src={require('../../images/foto-kelas/thumb/0-1.jpg')} className="img-fluid" alt="kelas 0_1" />
+// 									</td>
+// 									<td>
+// 										<img src={require('../../images/foto-kelas/thumb/0-2.jpg')} className="img-fluid" alt="kelas 0_2" />
+// 									</td>
+// 									<td>
+// 										<img src={require('../../images/foto-kelas/thumb/0-3.jpg')} className="img-fluid" alt="kelas 0_3" />
+// 									</td>
+// 								</tr>
+// 							</tbody>
+// 						</table>
+// 					</CardBody>
+// 				</Card>
+// 			</div>
+// 			<div className="d-flex position-relative" style={{ bottom: "510px"}}>
+// 				<Card style={{ width: "50%" }} className="mx-4">
+// 					<CardHeader style={{ backgroundColor: "#f16530" }}><h4 className="text-center text-white">Hi Hello Baby Class</h4></CardHeader>
+// 					<CardBody className="pb-0">
+// 						<p className="mb-0">
+// 							<b>Usia 0-12 bulan:</b> Menstimulasi kebutuhan, kemampuan, dan sensitifitas pada bayi <b>|</b> Melatih bagaimana orang tua memiliki interaksi yang baik terhadap bayi, terutama eye contact dan respon <b>|</b> Melatih kemampuan motorik halus dan kasar <b>|</b> Memberikan stimulasi dini melalui pengalaman sensori pada bayi.
+// 						</p>
+// 						<table className="table table-borderless mb-0">
+// 							<tbody>
+// 								<tr>
+// 									<td>
+// 										<img src={require('../../images/foto-kelas/thumb/0-1.jpg')} className="img-fluid" alt="kelas 0_1" />
+// 									</td>
+// 									<td>
+// 										<img src={require('../../images/foto-kelas/thumb/0-2.jpg')} className="img-fluid" alt="kelas 0_2" />
+// 									</td>
+// 									<td>
+// 										<img src={require('../../images/foto-kelas/thumb/0-3.jpg')} className="img-fluid" alt="kelas 0_3" />
+// 									</td>
+// 								</tr>
+// 							</tbody>
+// 						</table>
+// 					</CardBody>
+// 				</Card>
+// 				<div className="circle circle-4">
+// 					<p>4</p>
+// 				</div>
+// 				<div className="link link-4"></div>
+// 				<div style={{ width: "50%", border:"none" }} className="mx-4">
+
+// 				</div>
+// 			</div>
+// 		</Container>
+// 	)
+// }
+
+
+const Timeline = () => {
+	return(
+		<Container fluid style={{ lineHeight:"18px"}}>
+			<div className="col-md-12  text-center">
+				<h3><b>PROGRAM STIMULASI SAMBIL BERMAIN DAN BELAJAR</b></h3>
+				<p>
+					Program stimulasi disusun dengan metode khusus yang dirancang oleh para profesional. Bermain dan belajar jadi menyenangkan dengan aktivitas playtime yang dikemas dalam bentuk aktivitas bermain. Terdapat 2 pilihan sesi, pagi (10:00-13:00) dan sesi siang (14:00-17:00).
+				</p>
+			</div>
+			<Row>
+				<Col md={5} lg={5}>
+					<Card>
+						<CardHeader style={{ backgroundColor: "#f16530" }}><h4 className="text-center text-white">Hi Hello Baby Class</h4></CardHeader>
+						<CardBody>
+							<p className="mb-0">
+								<b>Usia 0-12 bulan:</b> Menstimulasi kebutuhan, kemampuan, dan sensitifitas pada bayi <b>|</b> Melatih bagaimana orang tua memiliki interaksi yang baik terhadap bayi, terutama eye contact dan respon <b>|</b> Melatih kemampuan motorik halus dan kasar <b>|</b> Memberikan stimulasi dini melalui pengalaman sensori pada bayi.
+							</p>
+							<table className="table table-borderless mb-0">
+								<tbody>
+									<tr>
+										<td>
+											<img src={require('../../images/foto-kelas/thumb/0-1.jpg')} className="img-fluid" alt="kelas 0_1" />
+										</td>
+										<td>
+											<img src={require('../../images/foto-kelas/thumb/0-2.jpg')} className="img-fluid" alt="kelas 0_2" />
+										</td>
+										<td>
+											<img src={require('../../images/foto-kelas/thumb/0-3.jpg')} className="img-fluid" alt="kelas 0_3" />
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</CardBody>
+					</Card>
+				</Col>
+				<Col md={7} lg={7}>
+					<div className="circle circle-0">
+						<p>0</p>
+					</div>
+	 				<div className="link link-0"></div>
+					<Card style={{ width: "50%", border:"none" }} className="mx-4">
+	 					<CardBody>
+	 						<h4>HARGA UNTUK 8x PERTEMUAN @3JAM <br/>MULAI DARI Rp. 1.200.000,-/BULAN</h4>
+	 					</CardBody>
+	 				</Card>
+				</Col>
+			</Row>
+		</Container>
+	)
+}
+const Activity = () => {
+	return(
+		<Container>
+			<h3 className="text-center"><b>ASPEK DAN TEMA AKTIFITAS PLAYTIME</b></h3>
+			<Row>
+				<Col md={6} lg={6}>
+					<img src={require('../../images/kelas-1.png')} alt="kelas 1" className="img-fluid"/>
+				</Col>
+				<Col md={6} lg={6}>
+					<img src={require('../../images/kelas-1.png')} alt="kelas 1" className="img-fluid"/>
+				</Col>
+			</Row>
+		</Container>
+	)
+}
+
 const Content = (props) => {
     return(
         <React.Fragment>
@@ -163,8 +412,11 @@ const Content = (props) => {
             <WhoWeAre whoWheAre={props.whoWeAreContent}/>
             <OurTeam />
             <Description description={props.descContent}/>
+			<Timeline></Timeline>
+			<Activity></Activity>
         </React.Fragment>
     )
 }
+
 
 export default Content
