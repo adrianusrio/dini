@@ -33,7 +33,11 @@ code {
     background-repeat: no-repeat;
 }
 
-.assesment input {
+.assesment input{
+    border-radius: 15px;
+}
+
+.assesment select{
     border-radius: 15px;
 }
 
